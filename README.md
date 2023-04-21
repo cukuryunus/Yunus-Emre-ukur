@@ -1,2 +1,2 @@
-# Yunus-Emre-ukur
+# Yunus-Emre-çukur
 Web Teknolojileri Site Tasarımı Ödevi
