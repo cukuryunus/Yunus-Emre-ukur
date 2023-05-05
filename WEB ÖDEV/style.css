@@ -4,7 +4,16 @@
     margin: 0;
     padding: 0;
 }
-
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+   scroll-padding-top: 9rem;
+   scroll-behavior: smooth;
+}
+body{
+   position: sticky;
+   height: 200vh;
+}
 .container{
     background: url(images/bg\ \(web\).jpg);
     height: 100vh;
@@ -25,7 +34,7 @@ background: rgba(17, 137, 223, 0.522);
 }
  .navbar ul{
     float:right;
-    margin-right: 20px;
+    margin-right: 20px; 
 
  }
  .navbar .logo a{
@@ -52,4 +61,11 @@ background: rgba(17, 137, 223, 0.522);
  .navbar ul li a:hover{
     background:red ;
     border-radius: 2px;
+ }
+
+ .header{
+   position: fixed;
+   width: 100%;
+   z-index: 5;
+   
  }
