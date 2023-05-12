@@ -96,7 +96,7 @@ top: 0;
  .about{
   width: 100%;
   background-color: brown;
-  padding: 100px 0px;
+  padding: 100px 26px;
 
  }
  .about img{
@@ -106,6 +106,15 @@ top: 0;
  }
  .hakkımda_yazısı{
    width: 600px;
+ }
+ button{
+  background-color: turquoise;
+  color: white;
+  font-weight: bold;
+  border: 2px solid transparent;
+  border-radius:30px ;
+  padding: 10px;
+  
  }
  .main{
    width: 1130px;
@@ -144,8 +153,10 @@ top: 0;
   width: 350px;
   height: 350px;
 }
-.sehrim-yazısı{
+.sehrim-yazı{
   width: 600px;
+  align-self:normal;
+  margin: 20px;
  }
  .City{
   width: 100%;
@@ -153,8 +164,30 @@ top: 0;
   padding: 100px 0px;
   margin: 0;
   display: flex;
- 
-  justify-content:space-around ;
 }
+.team{
+  width: 100%;
+  background-color:coral;
+  padding: 100px 0px;
+  margin: 0;
+  display: flex;
+ } 
+ .team .takım-yazı{
+  width: 600px;
+ }
+ .takım{
+  width: 1130px;
+  margin: 0;
+  display: flex;
+  align-items:center ;
+  max-width: 95%;
+  justify-content:space-around ;
+ }
+ .takım img{
+  height: auto;
+   width: 380px;
+   height: 350px;
+ }
+
 
  
