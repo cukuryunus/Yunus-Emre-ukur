@@ -5,35 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylecontact.css">
-    <title>İletişim</title>  
+    <title>İletişim</title> 
+
 </head>
 <body>
 <h1>İletişim Sayfası</h1>
-<form>
+<form action="contact.php" method="post" name="contact">
     İsim
-    <input type="text" name="İsim">
+    <input type="text" name="name" id="name" required>
    <br>
     Soyisim
-    <input type="text" name="Soyİsim">
+    <input type="text" name="lastname" id="lastname" required>
     <br>
     Email
-    <input type="email" name="Email">
+    <input type="email" name="email" id="email" required>
     <br><br>
     Cinsiyetiniz<br>
-    <input type="radio" name="cinsiyet" value="Erkek">Erkek<br>
-    <input type="radio" name="cinsiyet" value="Kadın">Kadın<br>
-    <input type="radio" name="cinsiyet" value="Belirtmek İstemiyorum">Belirtmek İstemiyorum<br><br>
+    <input type="radio" id="gender" name="cinsiyet" value="Erkek">Erkek<br>
+    <input type="radio" id="gender" name="cinsiyet" value="Kadın">Kadın<br>
+    <input type="radio" id="gender" name="cinsiyet" value="Belirtmek İstemiyorum">Belirtmek İstemiyorum<br><br>
     Sevdiğiniz Aktiviteler <br>
     <input type="checkbox" name="aktivite" value="Futbol">Futbol<br>
     <input type="checkbox" name="aktivite" value="Basketbol">Basketbol<br>
     <input type="checkbox" name="aktivite" value="Tenis">Tenis<br>
     <input type="checkbox" name="aktivite" value="Yüzme">Yüzme  <br><br>
-    Mesajınız<br><br>
-    <input type="text" name="Mesaj"><br><br>
-    <input type="submit" value="Gönder">
-    <input type="reset">
+    Mesajınız(İsteğe bağlı)<br><br>
+    <textarea name="Mesaj" id="textarea" rows="4" cols="40" maxlength="168"></textarea><br><br><style> textarea {resize: none;}</style>
+    <input type="submit" value="Gönder" >
+    <input type="reset" value="Sıfırla">
+    <button type="button" onclick="FormKontrol()">Formu Kontrol Et</button>
     <br>
 </form>
+
+<script>
+function FormKontrol(){
+    Name = document.getElementById("name").value;
+    Lastname = document.getElementById("lastname").value;
+    Email = document.getElementById("email").value;
+    if (Name=="")
+        alert("Lütfen ad alanını doldurunuz.");
+    
+    if (Lastname=="")
+        alert("Lütfen Soyad alanını doldurunuz.");
+
+    if (Email=="")
+        alert("Lütfen Email alanını doldurunuz.");
+
+}
+</script>
+  
     
 </body>
 </html>
