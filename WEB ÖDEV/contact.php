@@ -12,12 +12,16 @@
         $name = $_POST["name"];
         $lastname = $_POST["lastname"];
         $email = $_POST["email"];
-        $gender = $_POST["gender"];
+        $gender = $_POST["cinsiyet"];
+        $favorite = $_POST["aktivite"];
+        $message = $_POST["Mesaj"];
         
         echo "<p>Kullanıcı Adı: " . $name . "</p>";
-        echo "<p>Parola: " . $lastname . "</p>";
+        echo "<p>Soyisim: " . $lastname . "</p>";
         echo "<p>Email: " . $email . "</p>";
         echo "<p>Cinsiyet: " . $gender . "</p>";
+        echo "<p>Aktivite: " . $favorite . "</p>";
+        echo "<p>Mesajınız: " . $message . "</p>";
     }
         
     ?>

@@ -21,9 +21,9 @@
     <input type="email" name="email" id="email" required>
     <br><br>
     Cinsiyetiniz<br>
-    <input type="radio" id="gender" name="cinsiyet" value="Erkek">Erkek<br>
-    <input type="radio" id="gender" name="cinsiyet" value="Kadın">Kadın<br>
-    <input type="radio" id="gender" name="cinsiyet" value="Belirtmek İstemiyorum">Belirtmek İstemiyorum<br><br>
+    <input type="radio" id="gender1" name="cinsiyet" value="Erkek">Erkek<br>
+    <input type="radio" id="gender2" name="cinsiyet" value="Kadın">Kadın<br>
+    <input type="radio" id="gender3" name="cinsiyet" value="Belirtmek İstemiyorum">Belirtmek İstemiyorum<br><br>
     Sevdiğiniz Aktiviteler <br>
     <input type="checkbox" name="aktivite" value="Futbol">Futbol<br>
     <input type="checkbox" name="aktivite" value="Basketbol">Basketbol<br>
@@ -42,6 +42,7 @@ function FormKontrol(){
     Name = document.getElementById("name").value;
     Lastname = document.getElementById("lastname").value;
     Email = document.getElementById("email").value;
+    
     if (Name=="")
         alert("Lütfen ad alanını doldurunuz.");
     
@@ -50,6 +51,10 @@ function FormKontrol(){
 
     if (Email=="")
         alert("Lütfen Email alanını doldurunuz.");
+    if (!document.getElementById("gender1").checked && !document.getElementById("gender2").checked && !document.getElementById("gender3").checked)
+        alert("Cinsiyet alanını doldurunuz");
+        else
+        alert("Formda sorun yok")
 
 }
 </script>

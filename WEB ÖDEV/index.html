@@ -72,7 +72,7 @@
     <section class="City" id="city">
         <div class="sehrim-yazı">
             <h1>Şehrim</h1>
-                <p>Doğa ve tarihi güzellikleriyle dolu olan İstanbul Şehrinde yaşamaktayım yan tarafta da bu şehre özgü bazı mekanlar paylaştım.</p>
+                <p>Doğa ve tarihi güzellikleriyle dolu olan İstanbul Şehrinde yaşamaktayım. Şehrin nüfusu 16 milyondur Anadolu ve Avrupa olarak iki yakadan oluşur yan tarafta da bu şehre özgü bazı mekanlar paylaştım.</p>
         </div>
         <div class="sehrim-resim">
             <a href="https://tr.wikipedia.org/wiki/Galata_Kulesi"><img src="images/galatakulesi.jpg" alt="Galata Kulesi"></a>
@@ -93,13 +93,26 @@
             <p>Trabzonspor, 2 Ağustos 1967'de kurulan Trabzon, Türkiye merkezli spor kulübü. Özellikle futbol şubesiyle tanınan kulüp, profesyonel futbol ligleri tarihinde şampiyon olan 6 kulüpten biri ve şampiyon olmayı başaran ilk Anadolu kulübüdür. Kulübün başkanlığını Ertuğrul Doğan yapmaktadır.</p>         
         
         </div>
+
         </div>
     </section>
     <!-- Takımım menü bitiş-->
     <!-- Hobilerim menü başlangıç-->
     <section class="interest " id="interest">
-        <script src="hobilerim.js"></script>
+        
         <div class="hobi">
+            <script type="text/javascript">
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': '13e1e7922emshfb96d38b11b64d3p121492jsn6bea4cd34e67',
+                    'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+                }
+            };
+              fetch('https://api-football-v1.p.rapidapi.com/v3/timezone', options)
+              .then(response => response.json())
+              .then(response => console.log(response))
+              .catch(err =>console.error(err));</script>
         </div>
     </section>
     <!-- Hobilerim menü bitiş-->
