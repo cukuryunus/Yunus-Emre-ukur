@@ -75,12 +75,76 @@
                 <p>Doğa ve tarihi güzellikleriyle dolu olan İstanbul Şehrinde yaşamaktayım. Şehrin nüfusu 16 milyondur Anadolu ve Avrupa olarak iki yakadan oluşur yan tarafta da bu şehre özgü bazı mekanlar paylaştım.</p>
         </div>
         <div class="sehrim-resim">
-            <a href="https://tr.wikipedia.org/wiki/Galata_Kulesi"><img src="images/galatakulesi.jpg" alt="Galata Kulesi"></a>
-            <a href="https://tr.wikipedia.org/wiki/K%C4%B1z_Kulesi"><img src="images/kizkulesi.jpg"></a>
-            <a href="https://tr.wikipedia.org/wiki/B%C3%BCy%C3%BCk_Mecidiye_Camii"><img src="images/ortaköycamii.jpg"></a>
-            <a href="https://tr.wikipedia.org/wiki/Taksim_Meydan%C4%B1"><img src="images/taksim.jpg"></a>      
-            <a href="https://tr.wikipedia.org/wiki/Topkapı_Sarayı"><img src="images/topkapı.jpg"></a>
-            <a href="https://tr.wikipedia.org/wiki/Ayasofya"><img src="images/ayasofya.jpg"></a> 
+            <link rel="stylesheet" href="sehrim.css">
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                  <div class="numbertext">1 / 4</div>
+                  <a href="https://tr.wikipedia.org/wiki/Ayasofya"><img src="images/ayasofya.jpg" style="width:100%" ></a>
+                  <div class="text">Ayasofya</div>
+                </div>
+              
+                <div class="mySlides fade">
+                  <div class="numbertext">2 / 4</div>
+                 <a href="https://tr.wikipedia.org/wiki/Taksim_Meydan%C4%B1"><img src="images/taksim.jpg" style="width:100%"></a>
+                  <div class="text">Taksim Meydanı</div>
+                </div>
+              
+                <div class="mySlides fade">
+                  <div class="numbertext">3 / 4</div>
+                  <a href="https://tr.wikipedia.org/wiki/K%C4%B1z_Kulesi"><img src="images/kizkulesi.jpg" style="width:100%"></a>
+                  <div class="text">Kız Kulesi</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 4</div>
+                   <a href="https://tr.wikipedia.org/wiki/B%C3%BCy%C3%BCk_Mecidiye_Camii"><img src="images/ortaköycamii.jpg" style="width:100%"></a>
+                    <div class="text">Ortaköy Camii</div>
+                  </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              </div>
+              <br>
+              
+              <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+              </div>
+             <!-- slider için js kodları başlangıç -->
+                <script>
+                let slideIndex = 1;
+                    showSlides(slideIndex);
+                    
+                    // Next/previous controls
+                    function plusSlides(n) {
+                      showSlides(slideIndex += n);
+                    }
+                    
+                    // Thumbnail image controls
+                    function currentSlide(n) {
+                      showSlides(slideIndex = n);
+                    }
+                    
+                    function showSlides(n) {
+                      let i;
+                      let slides = document.getElementsByClassName("mySlides");
+                      let dots = document.getElementsByClassName("dot");
+                      if (n > slides.length) {slideIndex = 1}
+                      if (n < 1) {slideIndex = slides.length}
+                      for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                      }
+                      for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                      }
+                      slides[slideIndex-1].style.display = "block";
+                      dots[slideIndex-1].className += " active";
+                    }
+                    </script>
+                    <!-- slider için js kodları bitiş -->
         </div>
     </section>
     <!-- Şehrim menü bitiş-->
@@ -97,30 +161,39 @@
         </div>
     </section>
     <!-- Takımım menü bitiş-->
-    <!-- Hobilerim menü başlangıç-->
+    <!-- İlgi alanım menü başlangıç-->
     <section class="interest " id="interest">
-        
-        <div class="hobi">
-            <script type="text/javascript">
-            const options = {
-                method: 'GET',
-                headers: {
-                    'X-RapidAPI-Key': '13e1e7922emshfb96d38b11b64d3p121492jsn6bea4cd34e67',
-                    'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
-                }
-            };
-              fetch('https://api-football-v1.p.rapidapi.com/v3/timezone', options)
-              .then(response => response.json())
-              .then(response => console.log(response))
-              .catch(err =>console.error(err));</script>
+        <div class="ilgialanim">
+            <div class="ilgialanimtext">
+       <h1>İlgi Alanım</h1>
+       <h4>Şaka ile alakalı bir api servisine bağlı butona basarak şaka çağırabilirsiniz</h4>
+    </div>
+    <button id="uret" onclick="SakaGetir()">Şaka Üret</button>
+    <div class="sakayazi">
+    <p id="saka"></p> 
+</div>
         </div>
     </section>
-    <!-- Hobilerim menü bitiş-->
-    
-    
-       
-
-   
+    <!-- İlgi alanım menü bitiş-->
     
 </body>
 </html>
+<!-- api için gerekli js kodları başlangıç -->
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+
+function SakaGetir(){
+    const settings = {
+	async: true,
+	crossDomain: true,
+	url: 'https://official-joke-api.appspot.com/random_joke',
+	method: 'GET',
+};
+
+$.ajax(settings).done(function (response) {
+    $("#saka").text(response.punchline);
+});
+}
+    
+</script>
+<!-- api için gerekli js kodları bitiş -->

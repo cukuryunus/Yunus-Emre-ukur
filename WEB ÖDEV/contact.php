@@ -20,8 +20,13 @@
         echo "<p>Soyisim: " . $lastname . "</p>";
         echo "<p>Email: " . $email . "</p>";
         echo "<p>Cinsiyet: " . $gender . "</p>";
+        if($favorite !=""){ //boş değilse yazdıracak boşsa yazmayacak
         echo "<p>Aktivite: " . $favorite . "</p>";
-        echo "<p>Mesajınız: " . $message . "</p>";
+        }
+        if($message !=""){ //boş değilse yazdıracak boşsa yazmayacak
+            echo "<p>Mesajınız: " . $message . "</p>";
+        }
+        
     }
         
     ?>
