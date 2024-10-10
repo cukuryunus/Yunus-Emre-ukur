@@ -1,2 +1,3 @@
-# Yunus-Emre-çukur
-Web Teknolojileri Site Tasarımı Ödevi
+# Web Site Design
+Yunus Emre Çukur
+
